@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import {  UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +9,24 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomePage {
 
-  constructor(public toastController : ToastController) {}
+  regForm : UntypedFormGroup | any;
 
-  async presentToast()
+  constructor(public toastController : ToastController) {
+
+    this.regForm = new UntypedFormControl({
+      'fullname' : new UntypedFormControl(null, Validators.required),
+      'email' : new UntypedFormControl(null, Validators.required),
+      'mobNumber' : new UntypedFormControl(null, Validators.required),
+      'gender' : new UntypedFormControl(null, Validators.required),
+      'class' : new UntypedFormControl(null, Validators.required),
+      
+    });
+
+  }
+
+ 
+
+  async presentToast(regForm : any)
   {
     const toast = await this.toastController.create({
       message: "Registered Successfully.",
@@ -20,6 +35,8 @@ export class HomePage {
       position : "top"
     });
     toast.present();
+
+    console.log(regForm);
   }
 
 }
