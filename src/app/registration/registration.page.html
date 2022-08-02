@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <div class="ion-text-center">
+        <h1>Student's Corner</h1>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="ion-text-center">
+            <h3>Registration</h3>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+  
+    <ion-card-content>
+
+      <form [formGroup]="regForm" class="container">
+        <ion-item>
+          <ion-label position="floating">Full Name<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required  type="text" formControlName="fullname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email Address<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required  type="email" formControlName="email"></ion-input>
+        </ion-item> 
+        <ion-item>
+          <ion-label position="floating">Mobile Number<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required  type="number" formControlName="mobNumber"></ion-input>
+        </ion-item> <br>
+
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-list>
+            <ion-item>
+              <ion-select placeholder="Select Gender" formControlName="gender">
+                <ion-select-option value="male">Male</ion-select-option>
+                <ion-select-option value="female">Female</ion-select-option>
+                <ion-select-option value="others">Others</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-item> <br>
+
+        <ion-item>
+          <ion-label>Class</ion-label>
+          <ion-list>
+            <ion-item>
+              <ion-select placeholder="Select Class" formControlName="standard">
+                <ion-select-option value="6th">VI Standard</ion-select-option>
+                <ion-select-option value="7th">VII Standard</ion-select-option>
+                <ion-select-option value="8th">VIII Standard</ion-select-option>
+                <ion-select-option value="9th">IX Standard</ion-select-option>
+                <ion-select-option value="10th">X Standard</ion-select-option>
+                <ion-select-option value="11th">XII Standard</ion-select-option>
+                <ion-select-option value="12th">XII Standard</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-item> <br>
+
+        <div class="ion-text-center">
+          <ion-button block color="primary" [disabled]="" type="submit" (click)="presentToast(regForm)">
+            Register
+          </ion-button>
+        </div>
+      </form>
+      
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
