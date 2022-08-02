@@ -30,15 +30,22 @@ export class RegistrationPage implements OnInit {
 
   async presentToast(regForm : any)
   {
-    const toast = await this.toastController.create({
-      message: "Registered Successfully.",
-      duration : 2000,
-      color : "success",
-      position : "top"
-    });
-    toast.present();
+    this.ionLoader.autoLoader();
+    
+    setTimeout(async () => {
+      const toast = await this.toastController.create({
+        message: "Registered Successfully.",
+        duration : 2000,
+        color : "success",
+        position : "top"
+      });
+      toast.present();
+  
+      console.log(regForm);
+      
+    }, 4000);
 
-    console.log(regForm);
+    
   }
 
 }
