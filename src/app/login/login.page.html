@@ -14,6 +14,7 @@
         <ion-col>
           <div class="ion-text-center">
             <h3>Login</h3>
+            <p>{{msg}}</p>
           </div>
         </ion-col>
       </ion-row>
@@ -22,7 +23,7 @@
   
     <ion-card-content>
 
-      <form [formGroup]="logForm" class="container">
+      <form method="post" [formGroup]="logForm" (submit)="doLogin(logForm)" class="container">
         <ion-item>
           <ion-label position="floating">Username<ion-text color="danger">*</ion-text></ion-label>
           <ion-input required  type="text" formControlName="username"></ion-input>

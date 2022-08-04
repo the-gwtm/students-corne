@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
-import {  FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import {  FormGroup, NgForm, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { LoaderService } from '../Services/loader.service';
+import { UserService } from '../Services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -10,15 +12,18 @@ import { LoaderService } from '../Services/loader.service';
 })
 export class RegistrationPage implements OnInit {
 
+
   regForm : UntypedFormGroup | any;
 
-  constructor(public toastController : ToastController, private ionLoader : LoaderService) { }
+  constructor(public toastController : ToastController, private ionLoader : LoaderService, public userSer : UserService, public router : Router) { }
   ngOnInit(): void {
 
     this.ionLoader.autoLoader();
     
     this.regForm = new UntypedFormGroup({
       'fullname' : new UntypedFormControl(null, Validators.required),
+      'username' : new UntypedFormControl(null, Validators.required),
+      'password' : new UntypedFormControl(null, Validators.required),
       'email' : new UntypedFormControl(null, Validators.required),
       'mobNumber' : new UntypedFormControl(null, Validators.required),
       'gender' : new UntypedFormControl(null, Validators.required),
@@ -46,6 +51,17 @@ export class RegistrationPage implements OnInit {
     }, 4000);
 
     
+  }
+
+  doRegister(form : NgForm)
+  {
+    this.userSer.userRegistration(form.value).subscribe((data:string)=>{
+      console.log(data);
+      form.reset();
+      this.router.navigateByUrl("/login");
+    }, (error:any)=>{
+      console.log(error);
+    });
   }
 
 }
