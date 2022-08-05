@@ -10,11 +10,11 @@ export class UserService {
 
   userRegistration(data : any)
   {
-    return this.http.post<string>("http://localhost:3001/register", data);
+    return this.http.post<string>("https://stucor-jztunnv56-the-gwtm.vercel.app/register", data);
   }
 
   userLogin(logData : any)
   {
-    return this.http.post<string>("http://localhost:3001/login", logData)
+    return this.http.post<string>("https://stucor-jztunnv56-the-gwtm.vercel.app/login", logData)
   }
 }
