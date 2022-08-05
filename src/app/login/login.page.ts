@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
 
   doLogin(form : NgForm)
   {
-    this.userSer.userLogin(form.value).subscribe((data:any)=>{
+    this.userSer.userLogin(form.value).subscribe((data:string)=>{
       if(data.length == 0)
       {
         this.msg = "Invalid Login";
