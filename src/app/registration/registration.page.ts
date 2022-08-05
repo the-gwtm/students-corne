@@ -55,7 +55,7 @@ export class RegistrationPage implements OnInit {
 
   doRegister(form : NgForm)
   {
-    this.userSer.userRegistration(form.value).subscribe((data:string)=>{
+    this.userSer.userRegistration(form.value).subscribe((data:any)=>{
       console.log(data);
       form.reset();
       this.router.navigateByUrl("/login");
