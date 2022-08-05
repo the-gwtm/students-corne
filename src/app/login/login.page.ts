@@ -40,6 +40,7 @@ export class LoginPage implements OnInit {
     }, (error)=>{
       console.log(error);
       this.msg = "Something went Wrong";
+      form.reset();
     })
   }
 
