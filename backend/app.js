@@ -29,6 +29,7 @@ app.post("/register", (req, res)=>{
     console.log(req.body);
 
     req.body._id = new Date().getTime();
+    
 
     db.collection("users").insertOne(req.body, (error, data)=>{
         if(error)

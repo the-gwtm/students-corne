@@ -19,3 +19,16 @@
 #title{
     font-family: 'Inter';
 }
+
+ion-content.background{
+    --background: url(../../assets/rm347-porpla-02-a-01.jpg) 0 0/100% 100% no-repeat;
+}
+
+.glass-effect{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 32px;
+}
