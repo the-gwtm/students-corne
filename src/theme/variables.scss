@@ -233,4 +233,20 @@
 
     --ion-card-background: #1e1e1e;
   }
+  
 }
+
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff');
+$font-family-base:"DynaPuff", cursive !important;
+$font-family-ios-base: 'DynaPuff';
+$font-family-md-base:'DynaPuff';
+$font-family-wp-base:'DynaPuff';
+
+ :root {
+    --ion-font-family: 'DynaPuff';
+}
+
+
+
+  
+

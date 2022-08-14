@@ -3,6 +3,10 @@ const cors = require("cors");
 const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const mongodb = require("mongodb").MongoClient;
+const cryptojs  = require("crypto-js");
+const AES = require("crypto-js/aes");
+const SHA256 = require("crypto-js/sha256");
+
 
 
 const app = express();
