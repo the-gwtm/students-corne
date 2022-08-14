@@ -47,6 +47,14 @@ const routes: Routes = [
   {
     path: 'socialscience',
     loadChildren: () => import('./Pages/socialscience/socialscience.module').then( m => m.SocialsciencePageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./Pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./Pages/settings/settings.module').then( m => m.SettingsPageModule)
   }
 ];
 
